@@ -3,5 +3,7 @@ sudo: required
 services:
     - docker
 
-script:
+before_install:
     - docker build -t sleepersmith/elasticsearch .
+
+script:
