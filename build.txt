@@ -1,0 +1,12 @@
+docker build -t sleepersmith/elasticsearch --build-arg ES_TAR_NAME=elasticsearch-2.2.0 .
+
+
+docker rmi -f $(docker images | grep "^<none>" | awk '{print $3}')
+
+docker volume create --name es_data
+
+docker run -it -p 9200:9200 -p 9300:9300 -v es_data:/mnt/xvdk sleepersmith/elasticsearch Analytics sg-72293017 true true rack_one 0 5 150
+
+
+
+docker run -it -p 9200:9200 -p 9300:9300 --rm --cap-add=IPC_LOCK --ulimit memlock=-1:-1 -v es_data:/mnt/xvdk sleepersmith/elasticsearch Analytics sg-72293017 true true rack_one 0 5 1100

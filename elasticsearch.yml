@@ -1,0 +1,15 @@
+network.host: 0.0.0.0
+path.data: /mnt/xvdk
+path.log: /mnt/xvdk
+bootstrap.mlockall: true
+discovery.type: ec2
+
+cluster.name: {{cluster-name}}
+cloud.aws.region: {{aws-region}}
+discovery.ec2.groups: {{aws-sec-group}}
+node.master: {{is-master}}
+node.data: {{is-data}}
+node.rack_id: {{rack-id}}
+index.number_of_replicas: {{replica-count}}
+index.number_of_shards: {{shard-count}}
+
