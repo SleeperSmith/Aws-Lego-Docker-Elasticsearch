@@ -3,6 +3,7 @@ path.data: /mnt/xvdk
 path.log: /mnt/xvdk
 bootstrap.mlockall: true
 discovery.type: ec2
+cluster.routing.allocation.awareness.attributes: rack_id
 
 cluster.name: {{cluster-name}}
 cloud.aws.region: {{aws-region}}
@@ -12,4 +13,3 @@ node.data: {{is-data}}
 node.rack_id: {{rack-id}}
 index.number_of_replicas: {{replica-count}}
 index.number_of_shards: {{shard-count}}
-
