@@ -9,13 +9,13 @@ RUN mkdir /home/local
 WORKDIR /home/local
 
 # Download
-RUN wget ${ES_TAR_URL}${ES_TAR_NAME}.tar.gz
-RUN tar --strip-components 1 -xvf ${ES_TAR_NAME}.tar.gz
-RUN rm ${ES_TAR_NAME}.tar.gz
+RUN wget ${ES_TAR_URL}${ES_TAR_NAME}.tar.gz && \
+    tar --strip-components 1 -xvf ${ES_TAR_NAME}.tar.gz && \
+    rm ${ES_TAR_NAME}.tar.gz
 
 # Install plugins
-RUN bin/plugin install cloud-aws
-RUN bin/plugin install lmenezes/elasticsearch-kopf/v2.1.1
+RUN bin/plugin install cloud-aws && \
+    bin/plugin install lmenezes/elasticsearch-kopf/v2.1.1
 
 # Add files
 ADD elasticsearch.yml ./config/
@@ -23,7 +23,7 @@ ADD es-init.sh ./
 ADD limits.conf /etc/security/
 
 # Create user and assign permission
-RUN useradd -m elasticsearch
-RUN chown -R elasticsearch /home/local
-RUN chmod 777 /home/local/es-init.sh
+RUN useradd -m elasticsearch && \
+    chown -R elasticsearch /home/local && \
+    chmod 777 /home/local/es-init.sh
 ENTRYPOINT ["/home/local/es-init.sh"]
