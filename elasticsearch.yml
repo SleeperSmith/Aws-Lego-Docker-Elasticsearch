@@ -12,4 +12,4 @@ node.data: {{is-data}}
 node.rack_id: {{rack-id}}
 index.number_of_replicas: {{replica-count}}
 index.number_of_shards: {{shard-count}}
-
+network.publish_host: {{pvt-ip}}
