@@ -15,7 +15,8 @@ RUN wget ${ES_TAR_URL}${ES_TAR_NAME}.tar.gz && \
 
 # Install plugins
 RUN bin/plugin install cloud-aws && \
-    bin/plugin install lmenezes/elasticsearch-kopf/v2.1.1
+    bin/plugin install lmenezes/elasticsearch-kopf/v2.1.1 && \
+    bin/plugin install royrusso/elasticsearch-HQ/v2.0.3
 
 # Add files
 ADD elasticsearch.yml ./config/
