@@ -15,6 +15,7 @@ RUN rm ${ES_TAR_NAME}.tar.gz
 
 # Install plugins
 RUN bin/plugin install cloud-aws
+RUN bin/plugin install lmenezes/elasticsearch-kopf/v2.1.1
 
 # Add files
 ADD elasticsearch.yml ./config/
