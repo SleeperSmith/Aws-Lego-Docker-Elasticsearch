@@ -1,6 +1,6 @@
 FROM java:8
 ARG ES_TAR_NAME=elasticsearch-2.2.0
-ARG ES_TAR_URL=https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.2.0/
+ARG ES_TAR_URL=https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.0/
 EXPOSE 9200
 EXPOSE 9300
 
